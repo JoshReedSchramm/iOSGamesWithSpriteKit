@@ -30,6 +30,14 @@
     [self addChild:ball];
 
     ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+    
+    SKSpriteNode *plunger = [SKSpriteNode spriteNodeWithImageNamed:@"plunger.png"];
+    plunger.position = CGPointMake(self.size.width / 2, self.size.height / 2 - 140);
+    plunger.size = CGSizeMake(25, 100);
+    [self addChild:plunger];
+    
+    plunger.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:plunger.size];
+    plunger.physicsBody.dynamic = NO;
 }
 
 @end
