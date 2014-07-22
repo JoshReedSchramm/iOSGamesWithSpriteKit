@@ -21,6 +21,8 @@
 - (void)setUpScene
 {
     self.backgroundColor = [SKColor whiteColor];
+    
+    self.physicsWorld.gravity = CGVectorMake(0, -3.8);
 
     SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"pinball.png"];
     ball.position = CGPointMake(self.size.width/2, self.size.height/2);
