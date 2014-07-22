@@ -7,6 +7,8 @@
  * Visit http://www.pragmaticprogrammer.com/titles/pssprite for more book information.
 ***/
 #import "RCWMyScene.h"
+#import "PinballNode.h"
+#import "PlungerNode.h"
 
 @implementation RCWMyScene
 
@@ -23,21 +25,16 @@
     self.backgroundColor = [SKColor whiteColor];
     
     self.physicsWorld.gravity = CGVectorMake(0, -3.8);
-
-    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"pinball.png"];
-    ball.position = CGPointMake(self.size.width/2, self.size.height/2);
-    ball.size = CGSizeMake(20, 20);
+    
+    PinballNode *ball = [PinballNode ball];
+    ball.name = @"ball";
+    ball.position = CGPointMake(self.size.width / 2, self.size.height / 2);
     [self addChild:ball];
-
-    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
     
-    SKSpriteNode *plunger = [SKSpriteNode spriteNodeWithImageNamed:@"plunger.png"];
+    PlungerNode *plunger = [PlungerNode plunger];
+    plunger.name = @"plunger";
     plunger.position = CGPointMake(self.size.width / 2, self.size.height / 2 - 140);
-    plunger.size = CGSizeMake(25, 100);
     [self addChild:plunger];
-    
-    plunger.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:plunger.size];
-    plunger.physicsBody.dynamic = NO;
 }
 
 @end
