@@ -50,7 +50,7 @@
     if (self.plungerTouch == nil && [plunger isInContactWithBall:ball]) {
         UITouch *touch = [touches anyObject];
         self.plungerTouch = touch;
-        [plunger grabWithTouch:touch];
+        [plunger grabWithTouch:touch holdingBall:ball inWorld:self.physicsWorld];
     }
 }
 
@@ -66,7 +66,7 @@
 {
     if ([touches containsObject:self.plungerTouch]) {
         PlungerNode *plunger = (id)[self childNodeWithName:@"plunger"];
-        [plunger letGoAndLaunchBall];
+        [plunger letGoAndLaunchBall:self.physicsWorld];
     }
 }
 

@@ -2,6 +2,7 @@
 
 @interface PlungerNode ()
 @property (nonatomic) CGFloat yTouchDelta;
+@property (nonatomic, strong) SKPhysicsJointFixed *jointToBall;
 @end
 
 @implementation PlungerNode
@@ -32,12 +33,16 @@
     return [contactedBodies containsObject:ball.physicsBody];
 }
 
-- (void)grabWithTouch:(UITouch *)touch
+- (void)grabWithTouch:(UITouch *)touch holdingBall:(PinballNode *)ball inWorld:(SKPhysicsWorld *)world
 {
     CGPoint touchPoint = [touch locationInNode:self];
     SKNode *stick = [self childNodeWithName:@"stick"];
     
     self.yTouchDelta = stick.position.y - touchPoint.y;
+    
+    CGPoint jointPoint = [self convertPoint:stick.position toNode:self.scene];
+    self.jointToBall = [SKPhysicsJointFixed jointWithBodyA:stick.physicsBody bodyB:ball.physicsBody anchor:jointPoint];
+    [world addJoint:self.jointToBall];
 }
 
 - (void)translateToTouch:(UITouch *)touch
@@ -60,11 +65,24 @@
     stick.position = CGPointMake(0, newY);    
 }
 
-- (void)letGoAndLaunchBall
+- (void)letGoAndLaunchBall:(SKPhysicsWorld *)world
 {
     SKNode *stick = [self childNodeWithName:@"stick"];
-    SKAction *move = [SKAction moveToY:0 duration:0.02];
-    [stick runAction:move];
+    
+    CGFloat returnY = 0;
+    CGFloat distancePulled = returnY - stick.position.y;
+    CGFloat forceToApply = MAX(4, distancePulled / 2);
+    
+    SKAction *move = [SKAction moveToY:returnY duration:0.02];
+    SKAction *launchBall = [SKAction runBlock:^{
+        [world removeJoint:self.jointToBall];
+        SKPhysicsBody *ballBody = self.jointToBall.bodyB;
+        [ballBody applyImpulse:CGVectorMake(0, forceToApply)];
+        self.jointToBall = nil;
+    }];
+    
+    SKAction *all = [SKAction sequence:@[move, launchBall]];
+    [stick runAction:all];
 }
 
 @end

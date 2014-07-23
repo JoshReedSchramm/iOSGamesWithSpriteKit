@@ -7,8 +7,8 @@
 + (instancetype)plunger;
 
 - (BOOL)isInContactWithBall:(PinballNode *)ball;
-- (void)grabWithTouch:(UITouch *)touch;
+- (void)grabWithTouch:(UITouch *)touch holdingBall:(PinballNode *)ball inWorld:(SKPhysicsWorld *)world;
 - (void)translateToTouch:(UITouch *)touch;
-- (void)letGoAndLaunchBall;
+- (void)letGoAndLaunchBall:(SKPhysicsWorld *)world;
 
 @end
