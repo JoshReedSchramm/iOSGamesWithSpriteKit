@@ -60,4 +60,11 @@
     stick.position = CGPointMake(0, newY);    
 }
 
+- (void)letGoAndLaunchBall
+{
+    SKNode *stick = [self childNodeWithName:@"stick"];
+    SKAction *move = [SKAction moveToY:0 duration:0.02];
+    [stick runAction:move];
+}
+
 @end

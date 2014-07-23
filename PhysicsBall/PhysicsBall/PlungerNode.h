@@ -9,5 +9,6 @@
 - (BOOL)isInContactWithBall:(PinballNode *)ball;
 - (void)grabWithTouch:(UITouch *)touch;
 - (void)translateToTouch:(UITouch *)touch;
+- (void)letGoAndLaunchBall;
 
 @end

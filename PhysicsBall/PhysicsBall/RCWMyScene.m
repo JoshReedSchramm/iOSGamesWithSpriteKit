@@ -62,4 +62,12 @@
     }
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if ([touches containsObject:self.plungerTouch]) {
+        PlungerNode *plunger = (id)[self childNodeWithName:@"plunger"];
+        [plunger letGoAndLaunchBall];
+    }
+}
+
 @end
