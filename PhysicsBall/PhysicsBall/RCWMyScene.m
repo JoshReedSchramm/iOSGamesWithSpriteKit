@@ -1,4 +1,4 @@
-/***
+ /***
  * Excerpted from "Build iOS Games with Sprite Kit",
  * published by The Pragmatic Bookshelf.
  * Copyrights apply to this code. It may not be used to create training material, 
@@ -9,6 +9,12 @@
 #import "RCWMyScene.h"
 #import "PinballNode.h"
 #import "PlungerNode.h"
+
+@interface RCWMyScene()
+
+@property (nonatomic, weak) UITouch *plungerTouch;
+
+@end
 
 @implementation RCWMyScene
 
@@ -35,6 +41,25 @@
     plunger.name = @"plunger";
     plunger.position = CGPointMake(self.size.width / 2, self.size.height / 2 - 140);
     [self addChild:plunger];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    PinballNode *ball = (id)[self childNodeWithName:@"ball"];
+    PlungerNode *plunger = (id)[self childNodeWithName:@"plunger"];
+    
+    if (self.plungerTouch == nil && [plunger isInContactWithBall:ball]) {
+        UITouch *touch = [touches anyObject];
+        self.plungerTouch = touch;
+        [plunger grabWithTouch:touch];
+    }
+}
+
+- (void)didSimulatePhysics
+{
+    if (self.plungerTouch) {
+        PlungerNode *plunger = (id)[self childNodeWithName:@"plunger"];
+        [plunger translateToTouch:self.plungerTouch];
+    }
 }
 
 @end
