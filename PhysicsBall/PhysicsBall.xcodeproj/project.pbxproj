@@ -26,6 +26,7 @@
 		AB89EC1A18AA70E40076391B /* paddle-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1418AA70E40076391B /* paddle-anchor.png */; };
 		DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6126197E07DF0053E63B /* PinballNode.m */; };
 		DE8B612A197E08960053E63B /* PlungerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6129197E08960053E63B /* PlungerNode.m */; };
+		DED38311197F5A08001AEE22 /* TableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED38310197F5A08001AEE22 /* TableNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		DE8B6126197E07DF0053E63B /* PinballNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinballNode.m; sourceTree = "<group>"; };
 		DE8B6128197E08630053E63B /* PlungerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlungerNode.h; sourceTree = "<group>"; };
 		DE8B6129197E08960053E63B /* PlungerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlungerNode.m; sourceTree = "<group>"; };
+		DED3830F197F599E001AEE22 /* TableNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableNode.h; sourceTree = "<group>"; };
+		DED38310197F5A08001AEE22 /* TableNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				DE8B6126197E07DF0053E63B /* PinballNode.m */,
 				DE8B6128197E08630053E63B /* PlungerNode.h */,
 				DE8B6129197E08960053E63B /* PlungerNode.m */,
+				DED3830F197F599E001AEE22 /* TableNode.h */,
+				DED38310197F5A08001AEE22 /* TableNode.m */,
 			);
 			path = PhysicsBall;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB89EBE218AA613D0076391B /* main.m in Sources */,
+				DED38311197F5A08001AEE22 /* TableNode.m in Sources */,
 				DE8B612A197E08960053E63B /* PlungerNode.m in Sources */,
 				AB89EBEC18AA613D0076391B /* RCWViewController.m in Sources */,
 				AB89EBE618AA613D0076391B /* RCWAppDelegate.m in Sources */,

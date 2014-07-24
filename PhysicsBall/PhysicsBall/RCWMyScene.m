@@ -9,6 +9,7 @@
 #import "RCWMyScene.h"
 #import "PinballNode.h"
 #import "PlungerNode.h"
+#import "TableNode.h"
 
 @interface RCWMyScene()
 
@@ -32,20 +33,25 @@
     
     self.physicsWorld.gravity = CGVectorMake(0, -3.8);
     
-    PinballNode *ball = [PinballNode ball];
-    ball.name = @"ball";
-    ball.position = CGPointMake(self.size.width / 2, self.size.height / 2);
-    [self addChild:ball];
+    TableNode *table = [TableNode table];
+    table.name = @"table";
+    table.position = CGPointMake(0, 0);
+    [self addChild:table];
     
     PlungerNode *plunger = [PlungerNode plunger];
     plunger.name = @"plunger";
-    plunger.position = CGPointMake(self.size.width / 2, self.size.height / 2 - 140);
-    [self addChild:plunger];
+    plunger.position = CGPointMake(self.size.width  - plunger.size.width/ 2 - 4, plunger.size.height / 2);
+    [table addChild:plunger];
+    
+    PinballNode *ball = [PinballNode ball];
+    ball.name = @"ball";
+    ball.position = CGPointMake(plunger.position.x, plunger.position.y + plunger.size.height);
+    [table addChild:ball];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    PinballNode *ball = (id)[self childNodeWithName:@"ball"];
-    PlungerNode *plunger = (id)[self childNodeWithName:@"plunger"];
+    PinballNode *ball = (id)[self childNodeWithName:@"//ball"];
+    PlungerNode *plunger = (id)[self childNodeWithName:@"//plunger"];
     
     if (self.plungerTouch == nil && [plunger isInContactWithBall:ball]) {
         UITouch *touch = [touches anyObject];
@@ -56,16 +62,28 @@
 
 - (void)didSimulatePhysics
 {
+    TableNode *table = (id)[self childNodeWithName:@"table"];
+    PinballNode *ball = (id)[table childNodeWithName:@"ball"];
+    PlungerNode *plunger = (id)[table childNodeWithName:@"plunger"];
+
     if (self.plungerTouch) {
-        PlungerNode *plunger = (id)[self childNodeWithName:@"plunger"];
         [plunger translateToTouch:self.plungerTouch];
+    }
+    
+    [table followPositionOfBall:ball];
+    
+    if (ball.position.y < -500)
+    {
+        ball.position = CGPointMake(plunger.position.x, plunger.position.y + plunger.size.height);
+        ball.physicsBody.velocity = CGVectorMake(0, 0);
+        ball.physicsBody.angularVelocity = 0;
     }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if ([touches containsObject:self.plungerTouch]) {
-        PlungerNode *plunger = (id)[self childNodeWithName:@"plunger"];
+        PlungerNode *plunger = (id)[self childNodeWithName:@"//plunger"];
         [plunger letGoAndLaunchBall:self.physicsWorld];
     }
 }
