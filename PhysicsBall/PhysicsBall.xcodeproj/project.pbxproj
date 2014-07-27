@@ -28,6 +28,7 @@
 		DE7F1EE01984949B00DC5900 /* BumperNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EDF1984949B00DC5900 /* BumperNode.m */; };
 		DE7F1EE3198495D300DC5900 /* TargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EE2198495D300DC5900 /* TargetNode.m */; };
 		DE7F1EE5198496F900DC5900 /* layout.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE7F1EE4198496F900DC5900 /* layout.plist */; };
+		DE7F1EE81984A91500DC5900 /* HUDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EE71984A91500DC5900 /* HUDNode.m */; };
 		DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6126197E07DF0053E63B /* PinballNode.m */; };
 		DE8B612A197E08960053E63B /* PlungerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6129197E08960053E63B /* PlungerNode.m */; };
 		DED38311197F5A08001AEE22 /* TableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED38310197F5A08001AEE22 /* TableNode.m */; };
@@ -64,6 +65,8 @@
 		DE7F1EE11984952000DC5900 /* TargetNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TargetNode.h; sourceTree = "<group>"; };
 		DE7F1EE2198495D300DC5900 /* TargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNode.m; sourceTree = "<group>"; };
 		DE7F1EE4198496F900DC5900 /* layout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = layout.plist; sourceTree = "<group>"; };
+		DE7F1EE61984A8CE00DC5900 /* HUDNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDNode.h; sourceTree = "<group>"; };
+		DE7F1EE71984A91500DC5900 /* HUDNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDNode.m; sourceTree = "<group>"; };
 		DE8B6125197E07AB0053E63B /* PinballNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinballNode.h; sourceTree = "<group>"; };
 		DE8B6126197E07DF0053E63B /* PinballNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinballNode.m; sourceTree = "<group>"; };
 		DE8B6128197E08630053E63B /* PlungerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlungerNode.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				DE7F1EDF1984949B00DC5900 /* BumperNode.m */,
 				DE7F1EE11984952000DC5900 /* TargetNode.h */,
 				DE7F1EE2198495D300DC5900 /* TargetNode.m */,
+				DE7F1EE61984A8CE00DC5900 /* HUDNode.h */,
+				DE7F1EE71984A91500DC5900 /* HUDNode.m */,
 			);
 			path = PhysicsBall;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				AB89EBEF18AA613D0076391B /* RCWMyScene.m in Sources */,
 				DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */,
 				DE0C1E691980A5B100DE6F35 /* PaddleNode.m in Sources */,
+				DE7F1EE81984A91500DC5900 /* HUDNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

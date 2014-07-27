@@ -11,6 +11,7 @@
 #import "PlungerNode.h"
 #import "TableNode.h"
 #import "PaddleNode.h"
+#import "HUDNode.h"
 
 @interface RCWMyScene()
 
@@ -67,6 +68,11 @@
     
     [rightPaddle createPinJointInWorld];
     
+    HUDNode *hud = [HUDNode hud];
+    hud.name = @"hud";
+    hud.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+    [self addChild:hud];
+    [hud layoutForScene];    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
