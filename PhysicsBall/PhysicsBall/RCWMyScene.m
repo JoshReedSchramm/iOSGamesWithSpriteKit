@@ -12,12 +12,17 @@
 #import "TableNode.h"
 #import "PaddleNode.h"
 #import "HUDNode.h"
+#import "CategoriesMask.h"
+#import "TargetNode.h"
 
 @interface RCWMyScene() <SKPhysicsContactDelegate>
 
 @property (nonatomic, weak) UITouch *plungerTouch;
 @property (nonatomic, weak) UITouch *leftPaddleTouch;
 @property (nonatomic, weak) UITouch *rightPaddleTouch;
+
+@property (nonatomic, strong) NSArray *bumperSounds;
+@property (nonatomic, strong) NSArray *targetSounds;
 
 @end
 
@@ -74,7 +79,19 @@
     hud.name = @"hud";
     hud.position = CGPointMake(self.size.width / 2, self.size.height / 2);
     [self addChild:hud];
-    [hud layoutForScene];    
+    [hud layoutForScene];
+    
+    self.bumperSounds = @[
+                          [SKAction playSoundFileNamed:@"bump1.aif" waitForCompletion:NO],
+                          [SKAction playSoundFileNamed:@"bump2.aif" waitForCompletion:NO],
+                          [SKAction playSoundFileNamed:@"bump3.aif" waitForCompletion:NO]
+                          ];
+    
+    self.targetSounds = @[
+                          [SKAction playSoundFileNamed:@"target1.aif" waitForCompletion:NO],
+                          [SKAction playSoundFileNamed:@"target2.aif" waitForCompletion:NO],
+                          [SKAction playSoundFileNamed:@"target3.aif" waitForCompletion:NO]
+                          ];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -139,9 +156,46 @@
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
-    NSLog(@"In -didBeginContact:");
-    NSLog(@"bodyA: %@", contact.bodyA);
-    NSLog(@"bodyB: %@", contact.bodyB);
+    if (contact.bodyA.categoryBitMask == CategoryBall) {
+        [self ballBody:contact.bodyA didContact:contact withBody:contact.bodyB];
+    } else if (contact.bodyB.categoryBitMask == CategoryBall) {
+        [self ballBody:contact.bodyB didContact: contact withBody:contact.bodyA];
+    }
+}
+
+- (void)ballBody:(SKPhysicsBody *)ballBody
+      didContact:(SKPhysicsContact *)contact
+        withBody:(SKPhysicsBody *)otherBody
+{
+    if (otherBody.categoryBitMask == CategoryBumper) {
+        [self playRandomBumperSound];
+    } else if (otherBody.categoryBitMask == CategoryTarget) {
+        [self playRandomTargetSound];
+        TargetNode *target = (TargetNode *)otherBody.node;
+        [self addPoints:target.pointValue];
+    }
+}
+
+- (void)playRandomBumperSound
+{
+    NSInteger soundCount = [self.bumperSounds count];
+    NSInteger randomSoundIndex = arc4random_uniform((u_int32_t)soundCount);
+    SKAction *sound = self.bumperSounds[randomSoundIndex];
+    [self runAction:sound];
+}
+
+- (void)playRandomTargetSound
+{
+    NSInteger soundCount = [self.targetSounds count];
+    NSInteger randomSoundIndex = arc4random_uniform((u_int32_t)soundCount);
+    SKAction *sound = self.targetSounds[randomSoundIndex];
+    [self runAction:sound];
+}
+
+- (void)addPoints:(NSUInteger)points
+{
+    HUDNode *hud = (HUDNode*)[self childNodeWithName:@"hud"];
+    [hud addPoints:points];
 }
 
 @end
