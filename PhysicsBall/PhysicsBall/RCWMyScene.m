@@ -14,6 +14,7 @@
 #import "HUDNode.h"
 #import "CategoriesMask.h"
 #import "TargetNode.h"
+#import "PullHintNode.h"
 
 @interface RCWMyScene() <SKPhysicsContactDelegate>
 
@@ -55,6 +56,12 @@
     plunger.name = @"plunger";
     plunger.position = CGPointMake(self.size.width  - plunger.size.width/ 2 - 4, plunger.size.height / 2);
     [table addChild:plunger];
+    
+    PullHintNode *pullHint = [PullHintNode pullHint];
+    pullHint.name = @"pullHint";
+    pullHint.position = CGPointMake(plunger.position.x, plunger.position.y + plunger.size.height + 30);
+    [pullHint hideHint];
+    [table addChild:pullHint];
     
     PinballNode *ball = [PinballNode ball];
     ball.name = @"ball";
@@ -144,6 +151,16 @@
 
 - (void)update:(NSTimeInterval)currentTime
 {
+    PinballNode *ball = (id)[self childNodeWithName:@"//ball"];
+    PlungerNode *plunger = (id)[self childNodeWithName:@"//plunger"];
+    PullHintNode *hint = (id)[self childNodeWithName:@"//pullHint"];
+    if ([plunger isInContactWithBall:ball])
+    {
+        [hint showHint];
+    } else {
+        [hint hideHint];
+    }
+    
     if (self.leftPaddleTouch) {
         PaddleNode *leftPaddle = (id)[self childNodeWithName:@"//leftPaddle"];
         [leftPaddle flip];
