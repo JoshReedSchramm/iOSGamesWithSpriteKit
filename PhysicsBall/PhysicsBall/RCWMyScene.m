@@ -13,7 +13,7 @@
 #import "PaddleNode.h"
 #import "HUDNode.h"
 
-@interface RCWMyScene()
+@interface RCWMyScene() <SKPhysicsContactDelegate>
 
 @property (nonatomic, weak) UITouch *plungerTouch;
 @property (nonatomic, weak) UITouch *leftPaddleTouch;
@@ -36,6 +36,8 @@
     self.backgroundColor = [SKColor whiteColor];
     
     self.physicsWorld.gravity = CGVectorMake(0, -3.8);
+    
+    self.physicsWorld.contactDelegate = self;
     
     TableNode *table = [TableNode table];
     table.name = @"table";
@@ -133,6 +135,13 @@
         PaddleNode *rightPaddle = (id)[self childNodeWithName:@"//rightPaddle"];
         [rightPaddle flip];
     }
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    NSLog(@"In -didBeginContact:");
+    NSLog(@"bodyA: %@", contact.bodyA);
+    NSLog(@"bodyB: %@", contact.bodyB);
 }
 
 @end
