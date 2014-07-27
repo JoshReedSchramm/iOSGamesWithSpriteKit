@@ -15,6 +15,8 @@
 @interface RCWMyScene()
 
 @property (nonatomic, weak) UITouch *plungerTouch;
+@property (nonatomic, weak) UITouch *leftPaddleTouch;
+@property (nonatomic, weak) UITouch *rightPaddleTouch;
 
 @end
 
@@ -73,6 +75,15 @@
         UITouch *touch = [touches anyObject];
         self.plungerTouch = touch;
         [plunger grabWithTouch:touch holdingBall:ball inWorld:self.physicsWorld];
+    } else {
+        for (UITouch *touch in touches) {
+            CGPoint where = [touch locationInNode:self];
+            if (where.x < self.size.width / 2) {
+                self.leftPaddleTouch = touch;
+            } else {
+                self.rightPaddleTouch = touch;
+            }
+        }
     }
 }
 
@@ -101,6 +112,18 @@
     if ([touches containsObject:self.plungerTouch]) {
         PlungerNode *plunger = (id)[self childNodeWithName:@"//plunger"];
         [plunger letGoAndLaunchBall:self.physicsWorld];
+    }
+}
+
+- (void)update:(NSTimeInterval)currentTime
+{
+    if (self.leftPaddleTouch) {
+        PaddleNode *leftPaddle = (id)[self childNodeWithName:@"//leftPaddle"];
+        [leftPaddle flip];
+    }
+    if (self.rightPaddleTouch) {
+        PaddleNode *rightPaddle = (id)[self childNodeWithName:@"//rightPaddle"];
+        [rightPaddle flip];
     }
 }
 

@@ -9,5 +9,6 @@ typedef NS_ENUM(NSInteger, PaddleSide) {
 
 + (instancetype)paddleForSide:(PaddleSide)paddleSide;
 - (void)createPinJointInWorld;
+- (void)flip;
 
 @end

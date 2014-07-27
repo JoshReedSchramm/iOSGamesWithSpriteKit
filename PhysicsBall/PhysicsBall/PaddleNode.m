@@ -66,5 +66,16 @@ CGFloat const PaddleHeight = 20;
     [self.scene.physicsWorld addJoint:pin];
 }
 
+- (void)flip
+{
+    SKNode *bar = [self childNodeWithName:@"bar"];
+    CGFloat torque = 3;
+    if (self.paddleSide == PaddleRightSide)
+    {
+        torque *= -1;
+    }
+    [bar.physicsBody applyTorque:torque];
+}
+
 
 @end
