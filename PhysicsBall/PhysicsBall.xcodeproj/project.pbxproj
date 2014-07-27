@@ -25,6 +25,9 @@
 		AB89EC1918AA70E40076391B /* pinball.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1318AA70E40076391B /* pinball.png */; };
 		AB89EC1A18AA70E40076391B /* paddle-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1418AA70E40076391B /* paddle-anchor.png */; };
 		DE0C1E691980A5B100DE6F35 /* PaddleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C1E681980A5B100DE6F35 /* PaddleNode.m */; };
+		DE7F1EE01984949B00DC5900 /* BumperNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EDF1984949B00DC5900 /* BumperNode.m */; };
+		DE7F1EE3198495D300DC5900 /* TargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EE2198495D300DC5900 /* TargetNode.m */; };
+		DE7F1EE5198496F900DC5900 /* layout.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE7F1EE4198496F900DC5900 /* layout.plist */; };
 		DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6126197E07DF0053E63B /* PinballNode.m */; };
 		DE8B612A197E08960053E63B /* PlungerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6129197E08960053E63B /* PlungerNode.m */; };
 		DED38311197F5A08001AEE22 /* TableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED38310197F5A08001AEE22 /* TableNode.m */; };
@@ -56,6 +59,11 @@
 		AB89EC1418AA70E40076391B /* paddle-anchor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-anchor.png"; sourceTree = "<group>"; };
 		DE0C1E671980A52F00DE6F35 /* PaddleNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaddleNode.h; sourceTree = "<group>"; };
 		DE0C1E681980A5B100DE6F35 /* PaddleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddleNode.m; sourceTree = "<group>"; };
+		DE7F1EDE1984945600DC5900 /* BumperNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BumperNode.h; sourceTree = "<group>"; };
+		DE7F1EDF1984949B00DC5900 /* BumperNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumperNode.m; sourceTree = "<group>"; };
+		DE7F1EE11984952000DC5900 /* TargetNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TargetNode.h; sourceTree = "<group>"; };
+		DE7F1EE2198495D300DC5900 /* TargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNode.m; sourceTree = "<group>"; };
+		DE7F1EE4198496F900DC5900 /* layout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = layout.plist; sourceTree = "<group>"; };
 		DE8B6125197E07AB0053E63B /* PinballNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinballNode.h; sourceTree = "<group>"; };
 		DE8B6126197E07DF0053E63B /* PinballNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinballNode.m; sourceTree = "<group>"; };
 		DE8B6128197E08630053E63B /* PlungerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlungerNode.h; sourceTree = "<group>"; };
@@ -133,6 +141,10 @@
 				DED38310197F5A08001AEE22 /* TableNode.m */,
 				DE0C1E671980A52F00DE6F35 /* PaddleNode.h */,
 				DE0C1E681980A5B100DE6F35 /* PaddleNode.m */,
+				DE7F1EDE1984945600DC5900 /* BumperNode.h */,
+				DE7F1EDF1984949B00DC5900 /* BumperNode.m */,
+				DE7F1EE11984952000DC5900 /* TargetNode.h */,
+				DE7F1EE2198495D300DC5900 /* TargetNode.m */,
 			);
 			path = PhysicsBall;
 			sourceTree = "<group>";
@@ -140,6 +152,7 @@
 		AB89EBDC18AA613D0076391B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE7F1EE4198496F900DC5900 /* layout.plist */,
 				AB89EBDD18AA613D0076391B /* PhysicsBall-Info.plist */,
 				AB89EBDE18AA613D0076391B /* InfoPlist.strings */,
 				AB89EBE118AA613D0076391B /* main.m */,
@@ -205,6 +218,7 @@
 				AB89EC1518AA70E40076391B /* paddle-box.png in Resources */,
 				AB89EC1718AA70E40076391B /* target.png in Resources */,
 				AB89EBF318AA613D0076391B /* Images.xcassets in Resources */,
+				DE7F1EE5198496F900DC5900 /* layout.plist in Resources */,
 				AB89EC1818AA70E40076391B /* bumper.png in Resources */,
 				AB89EBE918AA613D0076391B /* Main.storyboard in Resources */,
 				AB89EC1918AA70E40076391B /* pinball.png in Resources */,
@@ -220,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7F1EE3198495D300DC5900 /* TargetNode.m in Sources */,
+				DE7F1EE01984949B00DC5900 /* BumperNode.m in Sources */,
 				AB89EBE218AA613D0076391B /* main.m in Sources */,
 				DED38311197F5A08001AEE22 /* TableNode.m in Sources */,
 				DE8B612A197E08960053E63B /* PlungerNode.m in Sources */,

@@ -1,4 +1,6 @@
 #import "TableNode.h"
+#import "BumperNode.h"
+#import "TargetNode.h"
 
 @implementation TableNode
 
@@ -48,6 +50,32 @@
     }
     
     self.position = CGPointMake(0, 0-cameraY);
+}
+
+- (void)loadLayoutNamed:(NSString *)name
+{
+    NSURL *layoutPath = [[NSBundle mainBundle] URLForResource:name withExtension:@"plist"];
+    NSDictionary *layout = [NSDictionary dictionaryWithContentsOfURL:layoutPath];
+    
+    for (NSDictionary *bumperConfig in layout[@"bumpers"])
+    {
+        CGSize size = CGSizeMake([bumperConfig[@"width"] floatValue], [bumperConfig[@"height"] floatValue]);
+        CGPoint position = CGPointMake([bumperConfig[@"x"] floatValue], [bumperConfig[@"y"] floatValue]);
+        BumperNode *bumper = [BumperNode bumperWithSize:size];
+        bumper.position = position;
+        bumper.zRotation = [bumperConfig[@"degrees"] floatValue] * M_PI / 180;
+        [self addChild:bumper];
+    }
+    
+    for (NSDictionary *targetConfig in layout[@"targets"])
+    {
+        CGFloat radius = [targetConfig[@"radius"] floatValue];
+        CGPoint position = CGPointMake([targetConfig[@"x"] floatValue], [targetConfig[@"y"] floatValue]);
+        TargetNode *target = [TargetNode targetWithRadius:radius];
+        target.position = position;
+        target.pointValue = [targetConfig[@"pointValue"] floatValue];
+        [self addChild:target];
+    }
 }
 
 @end

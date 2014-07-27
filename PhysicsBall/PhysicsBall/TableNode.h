@@ -6,5 +6,6 @@
 + (instancetype)table;
 
 - (void)followPositionOfBall:(PinballNode *)ball;
+- (void)loadLayoutNamed:(NSString *)name;
 
 @end

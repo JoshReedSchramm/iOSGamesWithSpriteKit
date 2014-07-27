@@ -41,6 +41,8 @@
     table.position = CGPointMake(0, 0);
     [self addChild:table];
     
+    [table loadLayoutNamed:@"layout"];
+    
     PlungerNode *plunger = [PlungerNode plunger];
     plunger.name = @"plunger";
     plunger.position = CGPointMake(self.size.width  - plunger.size.width/ 2 - 4, plunger.size.height / 2);
