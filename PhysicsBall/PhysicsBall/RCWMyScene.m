@@ -174,6 +174,11 @@
         TargetNode *target = (TargetNode *)otherBody.node;
         [self addPoints:target.pointValue];
     }
+    
+    if (otherBody.categoryBitMask & (CategoryBumper | CategoryTarget)) {
+        [self capPhysicsBody:ballBody atSpeed:1150];
+        [self flashNode:otherBody.node];
+    }
 }
 
 - (void)playRandomBumperSound
@@ -196,6 +201,27 @@
 {
     HUDNode *hud = (HUDNode*)[self childNodeWithName:@"hud"];
     [hud addPoints:points];
+}
+
+- (void)capPhysicsBody:(SKPhysicsBody *)body atSpeed:(CGFloat)maxSpeed
+{
+    CGFloat speed = sqrt(pow(body.velocity.dx, 2) + pow(body.velocity.dy, 2));
+    if (speed > maxSpeed) {
+        speed = maxSpeed;
+        CGFloat angle = atan2(body.velocity.dy, body.velocity.dx);
+        CGVector limitedVelocity = CGVectorMake(speed*cos(angle), speed*sin(angle));
+        body.velocity = limitedVelocity;
+    }
+}
+
+- (void)flashNode:(SKNode *)node
+{
+    SKAction *scaleUp = [SKAction scaleTo:1.1 duration:0.05];
+    SKAction *scaleDown = [SKAction scaleTo:1 duration:0.1];
+    SKAction *colorize = [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:200 duration:0];
+    SKAction *uncolorize = [SKAction colorizeWithColorBlendFactor:0 duration:0];
+    SKAction *all = [SKAction sequence:@[colorize, scaleUp, scaleDown, uncolorize]];
+    [node runAction:all];
 }
 
 @end
