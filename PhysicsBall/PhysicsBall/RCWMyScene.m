@@ -10,6 +10,7 @@
 #import "PinballNode.h"
 #import "PlungerNode.h"
 #import "TableNode.h"
+#import "PaddleNode.h"
 
 @interface RCWMyScene()
 
@@ -47,6 +48,21 @@
     ball.name = @"ball";
     ball.position = CGPointMake(plunger.position.x, plunger.position.y + plunger.size.height);
     [table addChild:ball];
+    
+    PaddleNode *leftPaddle = [PaddleNode paddleForSide:PaddleLeftSide];
+    leftPaddle.name = @"leftPaddle";
+    leftPaddle.position = CGPointMake(9, 100);
+    [table addChild:leftPaddle];
+    
+    [leftPaddle createPinJointInWorld];
+    
+    PaddleNode *rightPaddle = [PaddleNode paddleForSide:PaddleRightSide];
+    rightPaddle.name = @"rightPaddle";
+    rightPaddle.position = CGPointMake(plunger.position.x - plunger.size.width - 1, 100);
+    [table addChild:rightPaddle];
+    
+    [rightPaddle createPinJointInWorld];
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

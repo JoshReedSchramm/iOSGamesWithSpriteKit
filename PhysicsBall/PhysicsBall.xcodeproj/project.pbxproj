@@ -24,6 +24,7 @@
 		AB89EC1818AA70E40076391B /* bumper.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1218AA70E40076391B /* bumper.png */; };
 		AB89EC1918AA70E40076391B /* pinball.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1318AA70E40076391B /* pinball.png */; };
 		AB89EC1A18AA70E40076391B /* paddle-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1418AA70E40076391B /* paddle-anchor.png */; };
+		DE0C1E691980A5B100DE6F35 /* PaddleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C1E681980A5B100DE6F35 /* PaddleNode.m */; };
 		DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6126197E07DF0053E63B /* PinballNode.m */; };
 		DE8B612A197E08960053E63B /* PlungerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6129197E08960053E63B /* PlungerNode.m */; };
 		DED38311197F5A08001AEE22 /* TableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED38310197F5A08001AEE22 /* TableNode.m */; };
@@ -53,6 +54,8 @@
 		AB89EC1218AA70E40076391B /* bumper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bumper.png; sourceTree = "<group>"; };
 		AB89EC1318AA70E40076391B /* pinball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinball.png; sourceTree = "<group>"; };
 		AB89EC1418AA70E40076391B /* paddle-anchor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-anchor.png"; sourceTree = "<group>"; };
+		DE0C1E671980A52F00DE6F35 /* PaddleNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaddleNode.h; sourceTree = "<group>"; };
+		DE0C1E681980A5B100DE6F35 /* PaddleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddleNode.m; sourceTree = "<group>"; };
 		DE8B6125197E07AB0053E63B /* PinballNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinballNode.h; sourceTree = "<group>"; };
 		DE8B6126197E07DF0053E63B /* PinballNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinballNode.m; sourceTree = "<group>"; };
 		DE8B6128197E08630053E63B /* PlungerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlungerNode.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				DE8B6129197E08960053E63B /* PlungerNode.m */,
 				DED3830F197F599E001AEE22 /* TableNode.h */,
 				DED38310197F5A08001AEE22 /* TableNode.m */,
+				DE0C1E671980A52F00DE6F35 /* PaddleNode.h */,
+				DE0C1E681980A5B100DE6F35 /* PaddleNode.m */,
 			);
 			path = PhysicsBall;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				AB89EBE618AA613D0076391B /* RCWAppDelegate.m in Sources */,
 				AB89EBEF18AA613D0076391B /* RCWMyScene.m in Sources */,
 				DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */,
+				DE0C1E691980A5B100DE6F35 /* PaddleNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
