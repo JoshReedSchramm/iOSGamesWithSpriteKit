@@ -38,6 +38,7 @@
 		DED08403198597D4004756B0 /* SKEmitterNode+RCWExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DED08400198597D4004756B0 /* SKEmitterNode+RCWExtensions.m */; };
 		DED08404198597D4004756B0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DED08401198597D4004756B0 /* spark.png */; };
 		DED08405198597D4004756B0 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = DED08402198597D4004756B0 /* Spark.sks */; };
+		DED0840719859AA3004756B0 /* table-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = DED0840619859AA3004756B0 /* table-overlay.png */; };
 		DED38311197F5A08001AEE22 /* TableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED38310197F5A08001AEE22 /* TableNode.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		DED08400198597D4004756B0 /* SKEmitterNode+RCWExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+RCWExtensions.m"; sourceTree = "<group>"; };
 		DED08401198597D4004756B0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		DED08402198597D4004756B0 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
+		DED0840619859AA3004756B0 /* table-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table-overlay.png"; sourceTree = "<group>"; };
 		DED3830F197F599E001AEE22 /* TableNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableNode.h; sourceTree = "<group>"; };
 		DED38310197F5A08001AEE22 /* TableNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +141,7 @@
 		AB89EBDB18AA613D0076391B /* PhysicsBall */ = {
 			isa = PBXGroup;
 			children = (
+				DED0840619859AA3004756B0 /* table-overlay.png */,
 				DED083FF198597D4004756B0 /* SKEmitterNode+RCWExtensions.h */,
 				DED08400198597D4004756B0 /* SKEmitterNode+RCWExtensions.m */,
 				DED08401198597D4004756B0 /* spark.png */,
@@ -270,6 +273,7 @@
 				DED083E01985840C004756B0 /* target3.aif in Resources */,
 				DED083DE1985840C004756B0 /* target1.aif in Resources */,
 				DED083E619858413004756B0 /* bump3.aif in Resources */,
+				DED0840719859AA3004756B0 /* table-overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

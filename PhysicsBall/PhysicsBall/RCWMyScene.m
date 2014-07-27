@@ -90,6 +90,7 @@
     HUDNode *hud = [HUDNode hud];
     hud.name = @"hud";
     hud.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+    hud.zPosition = 100;
     [self addChild:hud];
     [hud layoutForScene];
     

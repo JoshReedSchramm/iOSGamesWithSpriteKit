@@ -32,6 +32,13 @@
     
     bounds.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:bezierPath.CGPath];
     
+    SKSpriteNode *overlay = [SKSpriteNode spriteNodeWithImageNamed:@"table-overlay"];
+    overlay.size = CGSizeMake(320, 1246);
+    overlay.anchorPoint = CGPointMake(0, 0);
+    overlay.position = CGPointMake(0, 0);
+    overlay.zPosition = 50;
+    [table addChild:overlay];
+    
     return table;
 }
 
