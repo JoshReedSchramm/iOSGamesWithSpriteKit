@@ -18,16 +18,9 @@
 		AB89EBEC18AA613D0076391B /* RCWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB89EBEB18AA613D0076391B /* RCWViewController.m */; };
 		AB89EBEF18AA613D0076391B /* RCWMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AB89EBEE18AA613D0076391B /* RCWMyScene.m */; };
 		AB89EBF318AA613D0076391B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB89EBF218AA613D0076391B /* Images.xcassets */; };
-		AB89EC1518AA70E40076391B /* paddle-box.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC0F18AA70E40076391B /* paddle-box.png */; };
-		AB89EC1618AA70E40076391B /* plunger.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1018AA70E40076391B /* plunger.png */; };
-		AB89EC1718AA70E40076391B /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1118AA70E40076391B /* target.png */; };
-		AB89EC1818AA70E40076391B /* bumper.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1218AA70E40076391B /* bumper.png */; };
-		AB89EC1918AA70E40076391B /* pinball.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1318AA70E40076391B /* pinball.png */; };
-		AB89EC1A18AA70E40076391B /* paddle-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1418AA70E40076391B /* paddle-anchor.png */; };
 		DE0C1E691980A5B100DE6F35 /* PaddleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C1E681980A5B100DE6F35 /* PaddleNode.m */; };
 		DE7F1EE01984949B00DC5900 /* BumperNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EDF1984949B00DC5900 /* BumperNode.m */; };
 		DE7F1EE3198495D300DC5900 /* TargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EE2198495D300DC5900 /* TargetNode.m */; };
-		DE7F1EE5198496F900DC5900 /* layout.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE7F1EE4198496F900DC5900 /* layout.plist */; };
 		DE7F1EE81984A91500DC5900 /* HUDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1EE71984A91500DC5900 /* HUDNode.m */; };
 		DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6126197E07DF0053E63B /* PinballNode.m */; };
 		DE8B612A197E08960053E63B /* PlungerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8B6129197E08960053E63B /* PlungerNode.m */; };
@@ -38,11 +31,13 @@
 		DED083E519858413004756B0 /* bump2.aif in Resources */ = {isa = PBXBuildFile; fileRef = DED083E219858413004756B0 /* bump2.aif */; };
 		DED083E619858413004756B0 /* bump3.aif in Resources */ = {isa = PBXBuildFile; fileRef = DED083E319858413004756B0 /* bump3.aif */; };
 		DED083E9198587CA004756B0 /* PullHintNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED083E8198587CA004756B0 /* PullHintNode.m */; };
-		DED083EF198588C2004756B0 /* pull-hint-0.png in Resources */ = {isa = PBXBuildFile; fileRef = DED083EA198588C2004756B0 /* pull-hint-0.png */; };
-		DED083F0198588C2004756B0 /* pull-hint-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DED083EB198588C2004756B0 /* pull-hint-1.png */; };
-		DED083F1198588C2004756B0 /* pull-hint-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DED083EC198588C2004756B0 /* pull-hint-2.png */; };
-		DED083F2198588C2004756B0 /* pull-hint-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DED083ED198588C2004756B0 /* pull-hint-3.png */; };
-		DED083F3198588C2004756B0 /* pull-hint-4.png in Resources */ = {isa = PBXBuildFile; fileRef = DED083EE198588C2004756B0 /* pull-hint-4.png */; };
+		DED083F61985913A004756B0 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DED083F51985913A004756B0 /* sprites.atlas */; };
+		DED083FA198592CD004756B0 /* BonusSpinnerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED083F9198592CD004756B0 /* BonusSpinnerNode.m */; };
+		DED083FC198595CF004756B0 /* layout.plist in Resources */ = {isa = PBXBuildFile; fileRef = DED083FB198595CF004756B0 /* layout.plist */; };
+		DED083FE19859706004756B0 /* bonus-spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = DED083FD19859706004756B0 /* bonus-spinner.png */; };
+		DED08403198597D4004756B0 /* SKEmitterNode+RCWExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DED08400198597D4004756B0 /* SKEmitterNode+RCWExtensions.m */; };
+		DED08404198597D4004756B0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DED08401198597D4004756B0 /* spark.png */; };
+		DED08405198597D4004756B0 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = DED08402198597D4004756B0 /* Spark.sks */; };
 		DED38311197F5A08001AEE22 /* TableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DED38310197F5A08001AEE22 /* TableNode.m */; };
 /* End PBXBuildFile section */
 
@@ -64,19 +59,12 @@
 		AB89EBED18AA613D0076391B /* RCWMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWMyScene.h; sourceTree = "<group>"; };
 		AB89EBEE18AA613D0076391B /* RCWMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWMyScene.m; sourceTree = "<group>"; };
 		AB89EBF218AA613D0076391B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AB89EC0F18AA70E40076391B /* paddle-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-box.png"; sourceTree = "<group>"; };
-		AB89EC1018AA70E40076391B /* plunger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plunger.png; sourceTree = "<group>"; };
-		AB89EC1118AA70E40076391B /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
-		AB89EC1218AA70E40076391B /* bumper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bumper.png; sourceTree = "<group>"; };
-		AB89EC1318AA70E40076391B /* pinball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinball.png; sourceTree = "<group>"; };
-		AB89EC1418AA70E40076391B /* paddle-anchor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-anchor.png"; sourceTree = "<group>"; };
 		DE0C1E671980A52F00DE6F35 /* PaddleNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaddleNode.h; sourceTree = "<group>"; };
 		DE0C1E681980A5B100DE6F35 /* PaddleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddleNode.m; sourceTree = "<group>"; };
 		DE7F1EDE1984945600DC5900 /* BumperNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BumperNode.h; sourceTree = "<group>"; };
 		DE7F1EDF1984949B00DC5900 /* BumperNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumperNode.m; sourceTree = "<group>"; };
 		DE7F1EE11984952000DC5900 /* TargetNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TargetNode.h; sourceTree = "<group>"; };
 		DE7F1EE2198495D300DC5900 /* TargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNode.m; sourceTree = "<group>"; };
-		DE7F1EE4198496F900DC5900 /* layout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = layout.plist; sourceTree = "<group>"; };
 		DE7F1EE61984A8CE00DC5900 /* HUDNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDNode.h; sourceTree = "<group>"; };
 		DE7F1EE71984A91500DC5900 /* HUDNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDNode.m; sourceTree = "<group>"; };
 		DE8B6125197E07AB0053E63B /* PinballNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinballNode.h; sourceTree = "<group>"; };
@@ -84,19 +72,23 @@
 		DE8B6128197E08630053E63B /* PlungerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlungerNode.h; sourceTree = "<group>"; };
 		DE8B6129197E08960053E63B /* PlungerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlungerNode.m; sourceTree = "<group>"; };
 		DED083D419858049004756B0 /* CategoriesMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesMask.h; sourceTree = "<group>"; };
-		DED083DB1985840C004756B0 /* target1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target1.aif; sourceTree = "<group>"; };
-		DED083DC1985840C004756B0 /* target2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target2.aif; sourceTree = "<group>"; };
-		DED083DD1985840C004756B0 /* target3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target3.aif; sourceTree = "<group>"; };
-		DED083E119858413004756B0 /* bump1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bump1.aif; sourceTree = "<group>"; };
-		DED083E219858413004756B0 /* bump2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bump2.aif; sourceTree = "<group>"; };
-		DED083E319858413004756B0 /* bump3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bump3.aif; sourceTree = "<group>"; };
+		DED083DB1985840C004756B0 /* target1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = target1.aif; path = ../target1.aif; sourceTree = "<group>"; };
+		DED083DC1985840C004756B0 /* target2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = target2.aif; path = ../target2.aif; sourceTree = "<group>"; };
+		DED083DD1985840C004756B0 /* target3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = target3.aif; path = ../target3.aif; sourceTree = "<group>"; };
+		DED083E119858413004756B0 /* bump1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bump1.aif; path = ../bump1.aif; sourceTree = "<group>"; };
+		DED083E219858413004756B0 /* bump2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bump2.aif; path = ../bump2.aif; sourceTree = "<group>"; };
+		DED083E319858413004756B0 /* bump3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bump3.aif; path = ../bump3.aif; sourceTree = "<group>"; };
 		DED083E7198587A3004756B0 /* PullHintNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullHintNode.h; sourceTree = "<group>"; };
 		DED083E8198587CA004756B0 /* PullHintNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullHintNode.m; sourceTree = "<group>"; };
-		DED083EA198588C2004756B0 /* pull-hint-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-0.png"; sourceTree = "<group>"; };
-		DED083EB198588C2004756B0 /* pull-hint-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-1.png"; sourceTree = "<group>"; };
-		DED083EC198588C2004756B0 /* pull-hint-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-2.png"; sourceTree = "<group>"; };
-		DED083ED198588C2004756B0 /* pull-hint-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-3.png"; sourceTree = "<group>"; };
-		DED083EE198588C2004756B0 /* pull-hint-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-4.png"; sourceTree = "<group>"; };
+		DED083F51985913A004756B0 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		DED083F819859216004756B0 /* BonusSpinnerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BonusSpinnerNode.h; sourceTree = "<group>"; };
+		DED083F9198592CD004756B0 /* BonusSpinnerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusSpinnerNode.m; sourceTree = "<group>"; };
+		DED083FB198595CF004756B0 /* layout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = layout.plist; sourceTree = "<group>"; };
+		DED083FD19859706004756B0 /* bonus-spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bonus-spinner.png"; sourceTree = "<group>"; };
+		DED083FF198597D4004756B0 /* SKEmitterNode+RCWExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+RCWExtensions.h"; sourceTree = "<group>"; };
+		DED08400198597D4004756B0 /* SKEmitterNode+RCWExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+RCWExtensions.m"; sourceTree = "<group>"; };
+		DED08401198597D4004756B0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		DED08402198597D4004756B0 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
 		DED3830F197F599E001AEE22 /* TableNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableNode.h; sourceTree = "<group>"; };
 		DED38310197F5A08001AEE22 /* TableNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,12 +111,6 @@
 		AB89EBC718AA613D0076391B = {
 			isa = PBXGroup;
 			children = (
-				DED083E119858413004756B0 /* bump1.aif */,
-				DED083E219858413004756B0 /* bump2.aif */,
-				DED083E319858413004756B0 /* bump3.aif */,
-				DED083DB1985840C004756B0 /* target1.aif */,
-				DED083DC1985840C004756B0 /* target2.aif */,
-				DED083DD1985840C004756B0 /* target3.aif */,
 				AB89EBDB18AA613D0076391B /* PhysicsBall */,
 				AB89EBD218AA613D0076391B /* Frameworks */,
 				AB89EBD118AA613D0076391B /* Products */,
@@ -153,6 +139,12 @@
 		AB89EBDB18AA613D0076391B /* PhysicsBall */ = {
 			isa = PBXGroup;
 			children = (
+				DED083FF198597D4004756B0 /* SKEmitterNode+RCWExtensions.h */,
+				DED08400198597D4004756B0 /* SKEmitterNode+RCWExtensions.m */,
+				DED08401198597D4004756B0 /* spark.png */,
+				DED08402198597D4004756B0 /* Spark.sks */,
+				DED083F719859173004756B0 /* Sounds */,
+				DED083F51985913A004756B0 /* sprites.atlas */,
 				AB89EBE418AA613D0076391B /* RCWAppDelegate.h */,
 				AB89EBE518AA613D0076391B /* RCWAppDelegate.m */,
 				AB89EBE718AA613D0076391B /* Main.storyboard */,
@@ -160,12 +152,6 @@
 				AB89EBEB18AA613D0076391B /* RCWViewController.m */,
 				AB89EBED18AA613D0076391B /* RCWMyScene.h */,
 				AB89EBEE18AA613D0076391B /* RCWMyScene.m */,
-				AB89EC0F18AA70E40076391B /* paddle-box.png */,
-				AB89EC1018AA70E40076391B /* plunger.png */,
-				AB89EC1118AA70E40076391B /* target.png */,
-				AB89EC1218AA70E40076391B /* bumper.png */,
-				AB89EC1318AA70E40076391B /* pinball.png */,
-				AB89EC1418AA70E40076391B /* paddle-anchor.png */,
 				AB89EBF218AA613D0076391B /* Images.xcassets */,
 				AB89EBDC18AA613D0076391B /* Supporting Files */,
 				DE8B6125197E07AB0053E63B /* PinballNode.h */,
@@ -185,6 +171,8 @@
 				DED083D419858049004756B0 /* CategoriesMask.h */,
 				DED083E7198587A3004756B0 /* PullHintNode.h */,
 				DED083E8198587CA004756B0 /* PullHintNode.m */,
+				DED083F819859216004756B0 /* BonusSpinnerNode.h */,
+				DED083F9198592CD004756B0 /* BonusSpinnerNode.m */,
 			);
 			path = PhysicsBall;
 			sourceTree = "<group>";
@@ -192,18 +180,27 @@
 		AB89EBDC18AA613D0076391B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DED083EA198588C2004756B0 /* pull-hint-0.png */,
-				DED083EB198588C2004756B0 /* pull-hint-1.png */,
-				DED083EC198588C2004756B0 /* pull-hint-2.png */,
-				DED083ED198588C2004756B0 /* pull-hint-3.png */,
-				DED083EE198588C2004756B0 /* pull-hint-4.png */,
-				DE7F1EE4198496F900DC5900 /* layout.plist */,
+				DED083FB198595CF004756B0 /* layout.plist */,
 				AB89EBDD18AA613D0076391B /* PhysicsBall-Info.plist */,
 				AB89EBDE18AA613D0076391B /* InfoPlist.strings */,
 				AB89EBE118AA613D0076391B /* main.m */,
 				AB89EBE318AA613D0076391B /* PhysicsBall-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DED083F719859173004756B0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DED083E119858413004756B0 /* bump1.aif */,
+				DED083E219858413004756B0 /* bump2.aif */,
+				DED083E319858413004756B0 /* bump3.aif */,
+				DED083DB1985840C004756B0 /* target1.aif */,
+				DED083DC1985840C004756B0 /* target2.aif */,
+				DED083DD1985840C004756B0 /* target3.aif */,
+				DED083FD19859706004756B0 /* bonus-spinner.png */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,25 +258,18 @@
 			files = (
 				DED083E419858413004756B0 /* bump1.aif in Resources */,
 				AB89EBE018AA613D0076391B /* InfoPlist.strings in Resources */,
-				AB89EC1518AA70E40076391B /* paddle-box.png in Resources */,
+				DED083F61985913A004756B0 /* sprites.atlas in Resources */,
+				DED08405198597D4004756B0 /* Spark.sks in Resources */,
+				DED083FE19859706004756B0 /* bonus-spinner.png in Resources */,
 				DED083DF1985840C004756B0 /* target2.aif in Resources */,
-				DED083EF198588C2004756B0 /* pull-hint-0.png in Resources */,
-				AB89EC1718AA70E40076391B /* target.png in Resources */,
-				DED083F1198588C2004756B0 /* pull-hint-2.png in Resources */,
-				DED083F2198588C2004756B0 /* pull-hint-3.png in Resources */,
+				DED08404198597D4004756B0 /* spark.png in Resources */,
 				DED083E519858413004756B0 /* bump2.aif in Resources */,
 				AB89EBF318AA613D0076391B /* Images.xcassets in Resources */,
-				DE7F1EE5198496F900DC5900 /* layout.plist in Resources */,
-				DED083F3198588C2004756B0 /* pull-hint-4.png in Resources */,
-				AB89EC1818AA70E40076391B /* bumper.png in Resources */,
+				DED083FC198595CF004756B0 /* layout.plist in Resources */,
 				AB89EBE918AA613D0076391B /* Main.storyboard in Resources */,
-				AB89EC1918AA70E40076391B /* pinball.png in Resources */,
-				AB89EC1618AA70E40076391B /* plunger.png in Resources */,
 				DED083E01985840C004756B0 /* target3.aif in Resources */,
 				DED083DE1985840C004756B0 /* target1.aif in Resources */,
 				DED083E619858413004756B0 /* bump3.aif in Resources */,
-				AB89EC1A18AA70E40076391B /* paddle-anchor.png in Resources */,
-				DED083F0198588C2004756B0 /* pull-hint-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +287,9 @@
 				DED38311197F5A08001AEE22 /* TableNode.m in Sources */,
 				DE8B612A197E08960053E63B /* PlungerNode.m in Sources */,
 				AB89EBEC18AA613D0076391B /* RCWViewController.m in Sources */,
+				DED083FA198592CD004756B0 /* BonusSpinnerNode.m in Sources */,
 				AB89EBE618AA613D0076391B /* RCWAppDelegate.m in Sources */,
+				DED08403198597D4004756B0 /* SKEmitterNode+RCWExtensions.m in Sources */,
 				AB89EBEF18AA613D0076391B /* RCWMyScene.m in Sources */,
 				DE8B6127197E07DF0053E63B /* PinballNode.m in Sources */,
 				DE0C1E691980A5B100DE6F35 /* PaddleNode.m in Sources */,

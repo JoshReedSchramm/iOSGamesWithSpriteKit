@@ -15,6 +15,9 @@
 #import "CategoriesMask.h"
 #import "TargetNode.h"
 #import "PullHintNode.h"
+#import "BonusSpinnerNode.h"
+#import "SKEmitterNode+RCWExtensions.h"
+
 
 @interface RCWMyScene() <SKPhysicsContactDelegate>
 
@@ -24,6 +27,8 @@
 
 @property (nonatomic, strong) NSArray *bumperSounds;
 @property (nonatomic, strong) NSArray *targetSounds;
+
+@property (nonatomic, strong) SKEmitterNode *sparkTemplate;
 
 @end
 
@@ -99,6 +104,8 @@
                           [SKAction playSoundFileNamed:@"target2.aif" waitForCompletion:NO],
                           [SKAction playSoundFileNamed:@"target3.aif" waitForCompletion:NO]
                           ];
+    
+    self.sparkTemplate = [SKEmitterNode rcw_nodeWithFile:@"Spark"];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -195,7 +202,29 @@
     if (otherBody.categoryBitMask & (CategoryBumper | CategoryTarget)) {
         [self capPhysicsBody:ballBody atSpeed:1150];
         [self flashNode:otherBody.node];
+        [self playPuffForContact:contact withVelocity:ballBody.velocity];
     }
+    
+    if (otherBody.categoryBitMask == CategoryBonusSpinner) {
+        BonusSpinnerNode *spinner = (BonusSpinnerNode *)otherBody.node;
+        [spinner spin];
+    }
+}
+
+- (void)playPuffForContact:(SKPhysicsContact *)contact withVelocity:(CGVector)velocity
+{
+    SKNode *table = [self childNodeWithName:@"table"];
+    
+    SKEmitterNode *spark = [self.sparkTemplate copy];
+    
+    spark.position = [self convertPoint:contact.contactPoint toNode:table];
+    spark.xAcceleration = self.physicsWorld.gravity.dx;
+    spark.yAcceleration = self.physicsWorld.gravity.dy;
+    spark.emissionAngle = atan2(velocity.dy, velocity.dx);
+    spark.particleSpeed = contact.collisionImpulse;
+    
+    [spark rcw_dieOutInDuration:0.05];
+    [table addChild:spark];
 }
 
 - (void)playRandomBumperSound
@@ -217,7 +246,12 @@
 - (void)addPoints:(NSUInteger)points
 {
     HUDNode *hud = (HUDNode*)[self childNodeWithName:@"hud"];
-    [hud addPoints:points];
+    BonusSpinnerNode *spinner = (id)[self childNodeWithName:@"//spinner"];
+    if (spinner.stillSpinning) {
+        [hud addPoints:points*3];
+    } else {
+        [hud addPoints:points];
+    }
 }
 
 - (void)capPhysicsBody:(SKPhysicsBody *)body atSpeed:(CGFloat)maxSpeed

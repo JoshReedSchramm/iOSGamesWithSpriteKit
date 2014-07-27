@@ -1,6 +1,7 @@
 #import "TableNode.h"
 #import "BumperNode.h"
 #import "TargetNode.h"
+#import "BonusSpinnerNode.h"
 
 @implementation TableNode
 
@@ -76,6 +77,12 @@
         target.pointValue = [targetConfig[@"pointValue"] floatValue];
         [self addChild:target];
     }
+    
+    NSDictionary *spinnerConfig = layout[@"bonusSpinner"];
+    BonusSpinnerNode *spinner = [BonusSpinnerNode bonusSpinnerNode];
+    spinner.name = @"name";
+    spinner.position = CGPointMake([spinnerConfig[@"x"] floatValue], [spinnerConfig[@"y"] floatValue]);
+    [self addChild:spinner];
 }
 
 @end
